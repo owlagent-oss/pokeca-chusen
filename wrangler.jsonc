@@ -1,6 +1,6 @@
 {
-  // 抽選ナビ：site/ の中身をそのまま公開する（Cloudflare Workers の静的サイト）
+  // 抽選ナビ：site/ の中身をそのまま公開する（Cloudflare Pages）
   "name": "pokeca-chusen",
   "compatibility_date": "2026-11-01",
-  "assets": { "directory": "./site" }
+  "pages_build_output_dir": "./site"
 }
