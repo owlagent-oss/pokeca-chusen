@@ -1,6 +1,6 @@
 {
  "checked": "2026-11-18",
- "note": "抽選ナビだけに出す全国の抽選（買取ナビは東海＋大手通販なので入れない）。まとめ情報から拾ったもので要確認。",
+ "note": "抽選ナビだけに出す抽選。全国分と、東海でまとめサイトから拾った分（要確認。お店の告知で確かめたら verified を付ける）。",
  "items": [
   {
    "pref": "関東",
@@ -253,6 +253,159 @@
    "time": "23:59",
    "result": "11/26",
    "url": "https://x.com/BOOKOFF_ueno/status/2113556043212939558"
+  },
+  {
+   "pref": "愛知・岐阜ほか",
+   "shop": "買取王国（一宮・春日井・豊橋・可児・豊田・岐阜・大垣・岡崎・多治見ほか）",
+   "item": "ストームエメラルダ（ポケカ）",
+   "game": "pokeca",
+   "method": "Googleフォームから応募",
+   "deadline": "2026-11-19",
+   "time": "23:59",
+   "condition": "応募条件は告知で確認",
+   "url": "https://docs.google.com/forms/d/e/1FAIpQLSd-vlKNrXIg5Kf9CGn7VuBkQ0bHYpUPj7yWfzBUvzA-tv6Hog/viewform"
+  },
+  {
+   "pref": "三重",
+   "shop": "ブックオフ イオン桑名店",
+   "item": "30th CELEBRATION BOX（ポケカ）",
+   "game": "pokeca",
+   "method": "店のXをフォロー＋リポスト",
+   "deadline": "2026-11-19",
+   "time": "23:59",
+   "condition": "Xアカウントが必要。条件は告知で確認",
+   "url": "https://x.com/bookoff_kuwana/status/2122132550210486403"
+  },
+  {
+   "pref": "三重",
+   "shop": "三洋堂書店 生桑店（四日市）",
+   "item": "プレミアムデッキセット エーフィ・ブラッキー（ポケカ）",
+   "game": "pokeca",
+   "method": "店のXをフォロー＋リポスト",
+   "deadline": "2026-11-20",
+   "time": "23:59",
+   "url": "https://x.com/sanyodoikuwa/status/2122162750667337900"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカチャンピオン 大須店（オンライン枠）",
+   "item": "ハドウシーカー（ポケカ） 1BOX",
+   "game": "pokeca",
+   "method": "会員限定。店のXのDMで応募",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "result": "11/25（当選者のみDM）",
+   "buy": "11/27中に店頭で現金払い",
+   "condition": "会員・本人確認。1人1応募",
+   "url": "https://x.com/Champion_osu/status/2122087248447393822"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカチャンピオン 大須店（店頭枠）",
+   "item": "ハドウシーカー・ストームエメラルダ・ニンジャスピナー（ポケカ）",
+   "game": "pokeca",
+   "method": "店頭で応募",
+   "deadline": "2026-11-22",
+   "time": "21:00",
+   "condition": "会員・本人確認",
+   "url": "https://x.com/Champion_osu/status/2121928555575787573"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカチャンピオン 名駅店",
+   "item": "ハドウシーカー（ポケカ） 1BOX",
+   "game": "pokeca",
+   "method": "会員限定。店のXのDMで応募",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "result": "11/25（当選者のみDM）",
+   "buy": "11/27中に店頭で現金払い",
+   "condition": "会員・本人確認。1人1応募",
+   "url": "https://x.com/TCmeieki/status/2122162751825199463"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカチャンピオン 江南店",
+   "item": "ハドウシーカー（ポケカ） 1BOX",
+   "game": "pokeca",
+   "method": "会員限定。店のXのDMで応募",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "result": "11/25（当選者のみDM）",
+   "buy": "11/27中に店頭で現金払い",
+   "condition": "会員。1人1応募",
+   "url": "https://x.com/CardKonan/status/2122202495783256517"
+  },
+  {
+   "pref": "愛知",
+   "shop": "ビデオインアメリカ 一宮本店（トレカチャンピオン）",
+   "item": "ハドウシーカー（ポケカ） 1BOX",
+   "game": "pokeca",
+   "method": "会員限定。店のXのDMで応募",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "result": "11/25（当選者のみDM）",
+   "buy": "11/27中に店頭で現金払い",
+   "condition": "会員・本人確認。1人1応募",
+   "url": "https://x.com/CardIchinomiya/status/2122102353968935364"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカチャンピオン MEGAドン・キホーテ豊橋店",
+   "item": "ハドウシーカー（ポケカ） 1BOX",
+   "game": "pokeca",
+   "method": "会員限定。店のXのDMで応募",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "result": "11/25（当選者のみDM）",
+   "buy": "11/27中に店頭で現金払い",
+   "condition": "会員・本人確認。1人1応募",
+   "url": "https://x.com/cardmegatoyo/status/2122087248162107846"
+  },
+  {
+   "pref": "岐阜",
+   "shop": "トレカチャンピオン 各務原店",
+   "item": "ハドウシーカー（ポケカ） 1BOX",
+   "game": "pokeca",
+   "method": "会員限定。店のXのDMで応募",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "result": "11/25（当選者のみDM）",
+   "buy": "11/27中に店頭で現金払い",
+   "condition": "会員・本人確認。1人1応募",
+   "url": "https://x.com/kagamigaharaVAC/status/2122094794180903068"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカダンジョン 稲沢本店",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "店頭で応募",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "condition": "会員・レシートが必要",
+   "url": "https://x.com/TCGDungeon/status/2120404083412807826"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカダンジョンLite 大須店",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "店頭で応募",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "condition": "会員・レシートが必要",
+   "url": "https://x.com/TCGDungeon_Osu/status/2120404850135687305"
+  },
+  {
+   "pref": "愛知",
+   "shop": "トレカショップ バズーカ 豊田店",
+   "item": "30th CELEBRATION（ポケカ）",
+   "game": "pokeca",
+   "method": "店のXをフォロー＋リポスト",
+   "deadline": "2026-12-11",
+   "time": "23:59",
+   "url": "https://x.com/bazuka_toyota/status/2113582334935208321"
   }
  ]
 }

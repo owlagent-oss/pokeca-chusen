@@ -11,5 +11,6 @@
 ## 抽選データの更新
 - 正本は買取ナビの `notes/lotteries.json`（見回りは1回で、両方のサイトに使う）
 - `python3 tools/sync.py <買取ナビの notes/lotteries.json>` で `site/index.html` に埋め込む → main に push
-- 抽選ナビだけに出す全国の抽選は `data/extra.json`（同じ店・同じ商品は買取ナビ側を優先）
+- 抽選ナビだけに出す抽選は `data/extra.json`（全国分＋東海でまとめサイトから拾った分。同じ店・同じ商品は買取ナビ側を優先）
+- 東海の拾い先：cardchusen.com/pokeka、nyuka-now.com/archives/2459、pokeca-navi.jp/prefectures/aichi/ ほか。拾ったら店の告知で確かめて verified を付ける
 - 出どころ（src）は外に出さない。お店の告知で確かめたもの（verified）は「確認済み」、ほかは「要確認」と表示
