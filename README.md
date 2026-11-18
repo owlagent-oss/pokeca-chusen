@@ -5,3 +5,8 @@
 - 公開：https://pokeca-chusen-navi.pages.dev （Cloudflare Pages。site/ の中身。main に push すると自動で反映）
 - 準備中は `noindex` と robots.txt で検索に出さない。本公開のときに外す
 - 広告（PR）は「PR」枠だけに出す。抽選情報の一覧には混ぜない
+
+## 抽選データの更新
+- 正本は買取ナビの `notes/lotteries.json`（見回りは1回で、両方のサイトに使う）
+- `python3 tools/sync.py <買取ナビの notes/lotteries.json>` で `site/index.html` に埋め込む → main に push
+- 出どころ（src）は外に出さない。お店の告知で確かめたもの（verified）は「確認済み」、ほかは「要確認」と表示

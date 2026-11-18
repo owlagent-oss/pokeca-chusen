@@ -60,6 +60,8 @@ h2{font-family:"Dela Gothic One";font-weight:400;font-size:18px;margin:22px 0 8p
 .b-open{background:var(--gr);color:#120a2e}
 .tags{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0;padding-left:6px}
 .tag{font-size:11px;border-radius:6px;padding:2px 7px;background:#ffffff18;color:#e9e5ff;font-weight:800}
+.tag.ok{background:var(--gr);color:#120a2e}.tag.ng{background:#ffffff24;color:#ffd0e5}
+.cond{margin:6px 0 0 6px;font-size:12px;color:#ffd98a;font-weight:800}
 .tag.area-tk{background:var(--or);color:#fff}
 .meta{font-size:12px;color:#fff;display:flex;flex-wrap:wrap;gap:10px;padding-left:6px;font-weight:800}
 .meta .cd{color:var(--y)}
@@ -89,7 +91,7 @@ footer a{color:var(--sub);margin-right:12px}
 </style>
 </head>
 <body>
-<div class="proto">試作版（確認用）・掲載データは2026/11/17 夜時点のサンプルです</div>
+<div class="proto">準備中・最終確認 <span id="checked"></span></div>
 <header><div class="hd"><div class="logo">抽選</div><div class="ttl">ポケカ・トレカ抽選ナビ<small>全国・名古屋・東海の抽選販売まとめ</small></div></div></header>
 <div class="ticker"><span id="tick">⚡ 抽選情報を更新中 ⚡</span></div>
 <main>
@@ -105,7 +107,7 @@ footer a{color:var(--sub);margin-right:12px}
   <h2>📍 エリアでしぼる</h2>
   <div class="chips" id="areaChips"></div>
 
-  <h2>🎴 商品でしぼる</h2>
+  <h2>🎴 トレカでしぼる</h2>
   <div class="chips" id="prodChips"></div>
 
   <div id="tokaiBox"></div>
@@ -124,8 +126,6 @@ footer a{color:var(--sub);margin-right:12px}
     <a class="prcta" id="prCta" href="#" rel="sponsored noopener" target="_blank">今すぐチェック →</a>
   </section>
 
-  <h2>📦 商品ごとに見る</h2>
-  <div class="prods" id="prods"></div>
 </main>
 <footer>
   <div>掲載情報は各店の告知をもとにしています。応募条件・締切は必ず各店の告知ページでご確認ください。</div>
@@ -134,35 +134,14 @@ footer a{color:var(--sub);margin-right:12px}
 </footer>
 
 <script>
-// 試作データ（2026/11/17 夜時点）。本番では data/lotteries.json に分けて毎日更新する
-const PRODUCTS = {
-  "30th": {name:"30th CELEBRATION", sub:"拡張パック 1BOX 7,200円（税込）・20パック"},
-  "30th-set": {name:"30th CELEBRATION カードセット", sub:"カードセット"},
-  "hadou": {name:"ハドウシーカー", sub:"拡張パック"}
-};
-const AREAS = ["東海","オンライン","北海道","関東","静岡","関西","九州"];
-const TOKAI = ["東海"];
-const L = [
- {p:"30th",shop:"トレカオーシャン",area:"オンライン",type:"オンライン抽選",cond:["会員登録","本人確認","SNS応募"],end:"2026-11-17T23:59",ann:"11/20",url:"https://livepocket.jp/e/qatvd"},
- {p:"30th-set",shop:"CBトレコロ",area:"オンライン",type:"オンライン抽選",cond:["会員登録"],end:"2026-11-17T23:59",ann:"",url:"https://x.com/pokecasukkyanen/status/2120748994209157494"},
- {p:"hadou",shop:"ゲームプラザ元気（滋賀）",area:"関西",type:"オンライン抽選",cond:["本人確認","数量限定"],end:"2026-11-17T23:59",ann:"11/19",url:"https://docs.google.com/forms/d/e/1FAIpQLSdGc6NLtiRFwcBdSgcZkejWOGrdMsgS4vqkcKdqhzYSbkwDRQ/viewform"},
- {p:"30th",shop:"カードラボ 札幌店",area:"北海道",type:"オンライン抽選",cond:["本人確認","SNS応募"],end:"2026-11-18T23:59",ann:"11/19",url:"https://x.com/sappo_labo/status/2121898027292189033"},
- {p:"30th",shop:"キデイランド 大阪梅田店",area:"関西",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/ek1k8"},
- {p:"30th",shop:"楽天ブックス",area:"オンライン",type:"オンライン抽選",cond:["会員登録"],end:"2026-11-18T23:59",ann:"",url:"https://books.rakuten.co.jp/rb/18595282/"},
- {p:"30th-set",shop:"キデイランド 二子玉川店",area:"関東",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/jptpy"},
- {p:"hadou",shop:"キデイランド 清水店",area:"静岡",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/og9ju"},
- {p:"hadou",shop:"キデイランド 大阪梅田店",area:"関西",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/y3yhq"},
- {p:"hadou",shop:"キデイランド ららぽーとEXPOCITY店",area:"関西",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/spp67"},
- {p:"hadou",shop:"キデイランド 京都四条河原町店",area:"関西",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/wjgu1"},
- {p:"hadou",shop:"キデイランド 三宮店",area:"関西",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/np5on"},
- {p:"hadou",shop:"キデイランド 原宿店",area:"関東",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/0d5mm"},
- {p:"hadou",shop:"キデイランド 吉祥寺店",area:"関東",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/4ywaz"},
- {p:"hadou",shop:"キデイランド 二子玉川店",area:"関東",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:"https://livepocket.jp/e/haqf_"},
- {p:"hadou",shop:"キデイランド アミュプラザくまもと店",area:"九州",type:"オンライン抽選",cond:["会員登録","本人確認"],end:"2026-11-18T23:59",ann:"11/25",url:""},
- {p:"30th",shop:"CBトレコロ",area:"オンライン",type:"オンライン抽選",cond:["会員登録"],end:"2026-12-01T23:59",ann:"",url:"https://x.com/pokecasukkyanen/status/2120748994209157494"}
-];
-
+// 抽選データ（tools/sync.py が買取ナビの抽選データから作って、ここに埋め込む）
+/*DATA-START*/const DATA={"checked":"2026-11-17","items":[{"pref":"愛知","shop":"HobbyMarket さとう店","item":"神の支配 OP-18（ワンピース）","game":"onepiece","method":"Web応募（LivePocket）","deadline":"2026-11-17","time":"21:00","result":"11/18","buy":"11/21 10:00〜11/23 21:00 店頭"},{"pref":"愛知","shop":"MINT名古屋店","item":"神の支配 OP-18（ワンピース）","game":"onepiece","method":"Googleフォーム","deadline":"2026-11-18","time":"23:59","result":"11/19前後（メール）","buy":"11/28 21:00までに来店","condition":"本人確認は運転免許証・マイナンバーカード","url":"https://x.com/mint_nagoya/status/2121195654290784266","verified":"2026-11-17"},{"pref":"愛知","shop":"MINT名古屋店","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"Googleフォーム（店のXのフォロー＋対象ポストのリポストが必須）","deadline":"2026-11-24","time":"23:59","result":"11/25前後（当選者のみメール）","buy":"12/4 21:00までに来店","condition":"1人1回。本人確認は運転免許証・マイナンバーカード","url":"https://docs.google.com/forms/d/e/1FAIpQLSe1Cg5346OUiENnW8p3FgmO14wir06wnTff-MA3YrniZBb72A/viewform","verified":"2026-11-17"},{"pref":"愛知","shop":"トレカプラザ55 豊田店","item":"神の支配 OP-18（ワンピース）","game":"onepiece","method":"モバイル会員から応募","deadline":"2026-11-18","condition":"モバイル会員の登録が必要。締切の時刻・発表日は告知に記載なし","url":"https://x.com/tp55_revolution/status/2121505896845000984","verified":"2026-11-17"},{"pref":"愛知","shop":"カードボックス 刈谷店","item":"ハドウシーカー（ポケカ）","game":"pokeca","method":"店頭の注意書きを読んでQRコードから応募","deadline":"2026-11-18","condition":"11/2までにポイントカードに入会した人だけ","url":"https://x.com/CARDBOX_KARIYA/status/2117421510269022342","verified":"2026-11-17"},{"pref":"愛知","shop":"TCGショップ193（名駅店・椿店・大須店）","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"Googleフォーム","deadline":"2026-11-19","time":"23:59","result":"当選者のみメール","buy":"11/21〜11/26に支払い、引き取りは7日以内","condition":"10/31までに入会した店頭会員だけ（通販の会員は対象外）。箱のフィルム・外箱なし","url":"https://docs.google.com/forms/d/e/1FAIpQLScyVCz7XSzFQ8L4EWUXfMzbnjYKd2P3TCOXoAjrp3Wy0Md2ag/viewform","verified":"2026-11-17"},{"pref":"愛知","shop":"TSUTAYA ウイングタウン岡崎店","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"LivePocketで応募","deadline":"2026-11-19","time":"23:00","result":"11/23予定（メール）","buy":"11/27〜11/29 店頭","condition":"1人1回。本人確認あり。箱のフィルムは外して渡される","url":"https://livepocket.jp/e/xo13d","verified":"2026-11-17"},{"pref":"愛知","shop":"TSUTAYA 瀬戸店","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"LivePocketで応募","deadline":"2026-11-19","time":"23:00","result":"11/23予定（メール）","buy":"11/27〜11/29 店頭","condition":"1人1回。本人確認あり。箱のフィルムは外して渡される","url":"https://livepocket.jp/e/gjqwb","verified":"2026-11-17"},{"pref":"愛知","shop":"TSUTAYA 春日井店","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"LivePocketで応募","deadline":"2026-11-19","time":"23:00","result":"11/23予定（メール）","buy":"11/27〜11/29 店頭","condition":"1人1回。シリアルコードが必要。本人確認あり","url":"https://livepocket.jp/e/hjv8f","verified":"2026-11-17"},{"pref":"愛知","shop":"TSUTAYA ルビットタウン戸田店","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"LivePocketで応募","deadline":"2026-11-19","time":"23:00","result":"11/23予定（メール）","buy":"11/27〜11/29 店頭","condition":"1人1回。シリアルコードが必要。本人確認あり","url":"https://livepocket.jp/e/pcjvn","verified":"2026-11-17"},{"pref":"愛知","shop":"ブックオフ（名古屋みなと店・新瑞橋駅前店・西友岡崎店）","item":"神の支配 OP-18（ワンピース）","game":"onepiece","method":"各店のXをフォロー＋リポスト","deadline":"2026-11-19","result":"11/20ごろまでにDM（岡崎）","buy":"11/21〜11/22 店頭（岡崎）","condition":"締切の時刻は各店の告知で確認"},{"pref":"愛知","shop":"BOOKOFF PLUS ヨシヅヤ新稲沢店","item":"神の支配 OP-18（ワンピース）","game":"onepiece","method":"店のXをフォロー＋リポスト","deadline":"2026-11-19","result":"11/20（当選者にDM）","buy":"11/21〜11/22 店頭","condition":"Xの抽選だけ（当日の一般販売・郵送なし）。1人1点、シュリンクは外して渡し","url":"https://x.com/bo_inazawa/status/2121198390847676625","verified":"2026-11-17"},{"pref":"愛知・岐阜ほか","shop":"買取王国","item":"ハドウシーカー（ポケカ）","game":"pokeca","method":"Googleフォーム（告知のQRコード）。近くの買取王国を選んで応募","deadline":"2026-11-19","result":"11/26","buy":"11/27〜11/30","condition":"アプリ会員限定。1人15パックまで（1パック200円）。1人1回","url":"https://x.com/okokutore/status/2118924757852958762","verified":"2026-11-17"},{"pref":"愛知","shop":"コーギーアール名古屋店","item":"30th CELEBRATION カードセット9種（ポケカ）","game":"pokeca","method":"店のXをフォロー＋リポスト","deadline":"2026-11-20","time":"23:59","result":"当選者にDM","condition":"全9種セット 10,800円（税込）","url":"https://x.com/corgi_nagoya/status/2120831245215248852","verified":"2026-11-17"},{"pref":"愛知","shop":"BOOKOFF PLUS ヨシヅヤ新稲沢店","item":"ハドウシーカー（ポケカ）","game":"pokeca","method":"店のXをフォロー＋リポスト","deadline":"2026-11-25","result":"11/26（DM）","buy":"11/27〜11/29 店頭","condition":"Xの抽選だけ（当日の一般販売・郵送なし）。1人1点、シュリンクは外して渡し。当選のDMとアカウントを店頭で確認","url":"https://x.com/bo_inazawa/status/2120441870107250752","verified":"2026-11-17"},{"pref":"愛知","shop":"トレカショップ バズーカ（名古屋店・豊田店）","item":"ハドウシーカー（ポケカ）","game":"pokeca","method":"バズーカ名古屋（@bazuka_nagoya）と豊田店（@bazuka_toyota）の両方をフォロー＋抽選のポストをリポスト","deadline":"2026-12-11","time":"23:59","condition":"少数の定価販売","url":"https://x.com/bazuka_nagoya/status/2113583740110909888","verified":"2026-11-17"},{"pref":"愛知","shop":"すまいるキング 岡崎店（カードボックス岡崎店）","item":"ハドウシーカー（ポケカ） 購入権","game":"pokeca","method":"店内に掲示のQRコードから応募（店頭抽選）","deadline":"2026-11-22","time":"23:59","url":"https://x.com/Cardbox_okazaki/status/2117424910691860802","verified":"2026-11-17"},{"pref":"岐阜","shop":"三洋堂トレカ館 中津川店","item":"スペシャルデッキセットMEGA（ポケカ）","game":"pokeca","method":"店のXをフォロー＋リポスト","deadline":"2026-11-17","time":"20:59","result":"11/19（DM）","buy":"11/20〜11/23 店頭","condition":"岐阜・長野に住んでいる人だけ","url":"https://x.com/sanyodoTCG_naka/status/2121151328185663893","verified":"2026-11-17"},{"pref":"岐阜","shop":"草叢BOOKS 各務原店","item":"神の支配 OP-18（ワンピース）","game":"onepiece","method":"店頭掲示のQRコードからLivePocketで応募","deadline":"2026-11-17","time":"21:00","result":"11/18","buy":"11/21〜11/23 店頭（9時〜21時）","condition":"LivePocket会員登録と、店頭の有人カウンターで配るシリアルコードが必要","url":"https://x.com/kusamura_toreca/status/2121030282354598013","verified":"2026-11-17"},{"pref":"岐阜","shop":"王の洞窟 岐南本店","item":"神の支配 OP-18（ワンピース） 1BOX","game":"onepiece","method":"Web応募","deadline":"2026-11-17","time":"21:30","result":"11/18","buy":"11/21〜11/23 店頭受け取りだけ"},{"pref":"岐阜","shop":"TSUTAYA 大垣店","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"LivePocketで応募","deadline":"2026-11-19","time":"23:00","result":"11/23予定（メール）","buy":"11/27〜11/29 店頭","condition":"1人1回。シリアルコードが必要。本人確認あり","url":"https://livepocket.jp/e/r_9mb","verified":"2026-11-17"},{"pref":"岐阜","shop":"トレカショップ カドデ（各務原）","item":"30th CELEBRATION BOX（ポケカ）","game":"pokeca","method":"店のXをフォロー＋リポスト","deadline":"2026-12-31","result":"当選者にDM","buy":"2027/1/2から1週間以内に店頭","condition":"店に来られる人だけ"},{"pref":"三重","shop":"ブックオフ 鈴鹿ハンター店","item":"神の支配 OP-18（ワンピース） 1BOX","game":"onepiece","method":"店のXをフォロー＋リポスト","deadline":"2026-11-19","result":"11/20（XのDM）","buy":"11/21〜11/22 店頭","condition":"直接店頭で受け取れる人だけ。1人1BOX。テープを切って渡し","url":"https://x.com/BOOKOFFsuzuka/status/2120713195040170084","verified":"2026-11-17"},{"pref":"三重","shop":"TSUTAYA 鈴鹿中央通店","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"LivePocketで応募","deadline":"2026-11-19","time":"23:00","result":"11/23予定（メール）","buy":"11/27〜11/29 店頭","condition":"1人1回。シリアルコードが必要。本人確認あり","url":"https://livepocket.jp/e/frcx1","verified":"2026-11-17"},{"pref":"全国・通販","shop":"楽天ブックス","item":"ハドウシーカー・30th CELEBRATION・ストームエメラルダほか（ポケカ）","game":"pokeca","method":"各商品ページからエントリー","deadline":"2026-11-18","time":"23:59","result":"販売開始までにメール","buy":"11/29 10:00〜12/3 23:59（クレジットカード）","condition":"楽天会員。1世帯1名。同じ商品を楽天ブックスで買ったことがある人は無効","url":"https://books.rakuten.co.jp/rb/18537078/","verified":"2026-11-17"},{"pref":"全国・通販","shop":"ドラゴンスター通販","item":"ハドウシーカー（ポケカ）","game":"pokeca","method":"会員の抽選ページから応募","deadline":"2026-11-18","time":"23:59","result":"11/19予定","buy":"11/19〜11/25","url":"https://dorasuta.membercard.jp/lottery"},{"pref":"全国・店舗受け取り","shop":"イエローサブマリン各店","item":"30th CELEBRATION カードセット・ストームエメラルダの再販 購入権（ポケカ）","game":"pokeca","method":"店頭ポスターのQRコード（LivePocket）","deadline":"2026-11-18","time":"20:00","result":"11/22予定","buy":"11/23〜11/25 レシートをもらった店で","condition":"11/15〜11/18の300円以上のレシートとマイナンバーカードが必要。東海の店が対象かは未確認","url":"https://livepocket.jp/e/rnqyh","verified":"2026-11-17"},{"pref":"全国・店舗受け取り","shop":"コジマ（アプリ）","item":"ハドウシーカー（ポケカ） 1BOX","game":"pokeca","method":"コジマアプリから応募","deadline":"2026-11-20","time":"23:59","result":"11/27 0:00（アプリ）","buy":"11/27〜11/29 選んだ店で","condition":"コジマで累計5,000円以上の購入履歴が必要。対象の店は告知で確認","url":"https://www.kojima.net/shop/app/kojima_appli.html"},{"pref":"全国・通販","shop":"駿河屋通販","item":"ハドウシーカー（ポケカ）","game":"pokeca","method":"公式Xをフォロー＋リポストして、応募ページから申し込み","deadline":"2026-11-22","time":"23:59","result":"11/23","buy":"11/23〜11/26に支払い","condition":"マイページ登録が必要。1人1回"},{"pref":"全国・店舗受け取り","shop":"イトーヨーカドー","item":"30th CELEBRATION 再販分（ポケカ）","game":"pokeca","method":"LivePocketで応募","deadline":"2026-11-22","result":"LivePocketからお知らせ（店頭発表なし）","buy":"12/11〜12/13","condition":"受付は11/20から。対象の店は告知で確認","url":"https://x.com/PokeGetInfoMain/status/2122177290872516697"}]};/*DATA-END*/
+const GAMES={pokeca:"ポケカ",onepiece:"ワンピース",yugioh:"遊戯王",duema:"デュエマ"};
+const TOKAI=["愛知","岐阜","三重","愛知・岐阜ほか"];
+const L=DATA.items.map(x=>({...x,end:x.deadline+"T"+(x.time||"23:59"),area:x.pref}));
 let fStat="open", fArea="すべて", fProd="すべて";
+const AREAS=["東海","愛知","岐阜","三重","全国"];
+const inArea=(x,a)=>a==="すべて"||(a==="東海"?TOKAI.includes(x.pref):a==="全国"?x.pref.startsWith("全国"):x.pref.includes(a));
 const jst = s => new Date(s+":00+09:00");
 function dayKey(d){return new Date(d.getTime()+9*3600e3).toISOString().slice(0,10)}
 function status(x){
@@ -178,13 +157,14 @@ function left(x){
 }
 function fmt(x){const d=jst(x.end);const w="日月火水木金土"[new Date(d.getTime()+9*3600e3).getUTCDay()];const k=dayKey(d).slice(5).replace("-","/").replace(/^0/,"");return k+"("+w+") "+x.end.slice(11)}
 const isTokai=a=>TOKAI.includes(a);
+const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
 
 function renderChips(){
   const ac=document.getElementById("areaChips");
-  ac.innerHTML=["すべて",...AREAS].map(a=>`<button class="${a===fArea?"on":""} ${isTokai(a)?"tk":""}" data-a="${a}">${isTokai(a)?"⭐ 名古屋・東海":a}</button>`).join("");
+  ac.innerHTML=["すべて",...AREAS].map(a=>`<button class="${a===fArea?"on":""} ${a==="東海"?"tk":""}" data-a="${a}">${a==="東海"?"⭐ 名古屋・東海":a==="全国"?"全国・通販":a}</button>`).join("");
   ac.querySelectorAll("button").forEach(b=>b.onclick=()=>{fArea=b.dataset.a;render()});
   const pc=document.getElementById("prodChips");
-  pc.innerHTML=["すべて",...Object.keys(PRODUCTS)].map(p=>`<button class="${p===fProd?"on":""}" data-p="${p}">${p==="すべて"?"すべて":PRODUCTS[p].name}</button>`).join("");
+  pc.innerHTML=["すべて",...Object.keys(GAMES).filter(g=>L.some(x=>x.game===g))].map(p=>`<button class="${p===fProd?"on":""}" data-p="${p}">${p==="すべて"?"すべて":GAMES[p]}</button>`).join("");
   pc.querySelectorAll("button").forEach(b=>b.onclick=()=>{fProd=b.dataset.p;render()});
   document.querySelectorAll(".sum button").forEach(b=>{b.classList.toggle("on",b.dataset.f===fStat);b.onclick=()=>{fStat=b.dataset.f;render()}});
 }
@@ -194,22 +174,24 @@ function render(){
   document.getElementById("nTmr").textContent=live.filter(x=>status(x)==="tmr").length;
   document.getElementById("nOpen").textContent=live.length;
   renderChips();
-  let v=live.filter(x=>(fStat==="open"||status(x)===fStat)&&(fArea==="すべて"||x.area===fArea)&&(fProd==="すべて"||x.p===fProd));
+  let v=live.filter(x=>(fStat==="open"||status(x)===fStat)&&inArea(x,fArea)&&(fProd==="すべて"||x.game===fProd));
   v.sort((a,b)=>(isTokai(b.area)-isTokai(a.area))||(jst(a.end)-jst(b.end)));
   const t={today:"今日締切",tmr:"明日締切",open:"締切が近い順"}[fStat];
-  document.getElementById("listTitle").textContent=(fArea==="すべて"?"":(isTokai(fArea)?"名古屋・東海":fArea)+"・")+t+"（"+v.length+"件）";
-  document.getElementById("tokaiBox").innerHTML = isTokai(fArea)||fArea==="すべて" ? `<div class="tokai-box"><h3>⭐ 名古屋・東海の店頭抽選</h3><p>愛知・岐阜・三重のお店の抽選は、各店の告知を見回ってここにいちばん早く載せます。${live.some(x=>isTokai(x.area))?"":"<br>（試作版のため、いまは0件です）"}</p></div>`:"";
-  const td=live.filter(x=>status(x)==="today");document.getElementById("tick").textContent=td.length?"🚨 今日締切 "+td.length+"件！ "+td.map(x=>PRODUCTS[x.p].name+"＠"+x.shop).join("　／　"):"⚡ 明日締切 "+live.filter(x=>status(x)==="tmr").length+"件 ⚡ 名古屋・東海の抽選もチェック！";
+  document.getElementById("listTitle").textContent=(fArea==="すべて"?"":(fArea==="東海"?"名古屋・東海":fArea==="全国"?"全国・通販":fArea)+"・")+t+"（"+v.length+"件）";
+  document.getElementById("tokaiBox").innerHTML = fArea==="東海"||fArea==="すべて" ? `<div class="tokai-box"><h3>⭐ 名古屋・東海の店頭抽選</h3><p>愛知・岐阜・三重のお店の抽選を、各店の告知から集めて載せています（いま ${live.filter(x=>isTokai(x.pref)).length} 件受付中）。</p></div>`:"";
+  const td=live.filter(x=>status(x)==="today");document.getElementById("tick").textContent=td.length?"🚨 今日締切 "+td.length+"件！ "+td.map(x=>x.item.split("｜")[0]+"＠"+x.shop).join("　／　"):"⚡ 明日締切 "+live.filter(x=>status(x)==="tmr").length+"件 ⚡ 名古屋・東海の抽選もチェック！";
   const el=document.getElementById("list");
   if(!v.length){el.innerHTML=`<div class="empty">この条件で受付中の抽選はありません</div>`}
   else el.innerHTML=v.map(x=>{const s=status(x);const bc={today:"b-today",tmr:"b-tmr",open:"b-open"}[s];const bl={today:"今日締切",tmr:"明日締切",open:"受付中"}[s];
-    return `<article class="item s-${s} ${isTokai(x.area)?"tk":""}"><div class="row1"><div><div class="prod">${PRODUCTS[x.p].name}</div><div class="shop">${x.shop}</div></div><span class="badge ${bc}">${bl}</span></div>
-    <div class="tags"><span class="tag ${isTokai(x.area)?"area-tk":""}">${x.area}</span><span class="tag">${x.type}</span>${x.cond.map(c=>`<span class="tag">${c}</span>`).join("")}</div>
-    <div class="meta"><span>⏰ 締切 ${fmt(x)}</span><span class="cd">🔥 ${left(x)}</span>${x.ann?`<span>📣 発表 ${x.ann}</span>`:""}</div>
-    ${x.url?`<a class="go" href="${x.url}" target="_blank" rel="noopener">お店の応募ページを開く</a>`:`<span class="go off">応募ページを確認中</span>`}</article>`}).join("");
-  document.getElementById("prods").innerHTML=Object.entries(PRODUCTS).map(([k,p])=>`<div class="pcard" data-p="${k}"><b>${p.name}</b><small>${p.sub}</small><div class="cnt">受付中 ${live.filter(x=>x.p===k).length}件</div></div>`).join("");
-  document.querySelectorAll(".pcard").forEach(c=>c.onclick=()=>{fProd=c.dataset.p;fStat="open";render();window.scrollTo({top:0,behavior:"smooth"})});
+    return `<article class="item s-${s} ${isTokai(x.pref)?"tk":""}"><div class="row1"><div><div class="prod">${esc(x.item)}</div><div class="shop">${esc(x.shop)}</div></div><span class="badge ${bc}">${bl}</span></div>
+    <div class="tags"><span class="tag ${isTokai(x.pref)?"area-tk":""}">${esc(x.pref)}</span><span class="tag">${esc(x.method)}</span>${x.verified?`<span class="tag ok">✔ お店の告知で確認済み</span>`:`<span class="tag ng">要確認</span>`}</div>
+    <div class="meta"><span>⏰ 締切 ${fmt(x)}</span><span class="cd">🔥 ${left(x)}</span>${x.result?`<span>📣 発表 ${esc(x.result)}</span>`:""}</div>
+    ${x.buy?`<div class="meta" style="margin-top:4px"><span>🛒 購入 ${esc(x.buy)}</span></div>`:""}
+    ${x.condition?`<div class="cond">⚠ ${esc(x.condition)}</div>`:""}
+    ${x.url?`<a class="go" href="${esc(x.url)}" target="_blank" rel="noopener">お店の応募ページを開く</a>`:`<span class="go off">応募ページを確認中</span>`}</article>`}).join("");
+
 }
+document.getElementById("checked").textContent=DATA.checked;
 render(); setInterval(render,60000);
 // PR動画：data-video と data-href が入ったら、音なし自動ループ再生＋タップでリンク先へ
 (function(){const a=document.getElementById("prVideo"),c=document.getElementById("prCta");const v=a.dataset.video,h=a.dataset.href;
