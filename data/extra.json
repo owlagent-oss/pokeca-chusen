@@ -406,6 +406,191 @@
    "deadline": "2026-12-11",
    "time": "23:59",
    "url": "https://x.com/bazuka_toyota/status/2113582334935208321"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "Joshin webショップ",
+   "item": "ハドウシーカーほか（ポケカ）",
+   "game": "pokeca",
+   "method": "対象会員にメールで届く応募ページから",
+   "deadline": "2026-11-19",
+   "time": "09:59",
+   "url": "https://joshinweb.jp/toy/c_chusen.html"
+  },
+  {
+   "pref": "全国・アプリ",
+   "shop": "しまむらパーク",
+   "item": "ハドウシーカーほか（ポケカ）",
+   "game": "pokeca",
+   "method": "アプリで応募（応募券5枚が必要）",
+   "deadline": "2026-11-22",
+   "time": "23:00",
+   "result": "11/23予定",
+   "url": "https://www.shop-shimamura.com/disp/itemlist/?pre_rsv_icon=1"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "ザ・ビッグエクストラ（一部店舗）",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "iAEONアプリのエントリー一覧から応募",
+   "deadline": "2026-11-18",
+   "time": "23:59",
+   "result": "11/26 12時頃",
+   "url": "https://nyuka-now.com/archives/2459"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "古本市場",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選（当選者は店頭で購入）",
+   "deadline": "2026-11-22",
+   "time": "23:00",
+   "result": "11/25 23時頃",
+   "url": "https://www.furu1.net/news/news_information/pkop20261127sl"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "コロコロプレミア",
+   "item": "スタートデッキ100 バトルコレクション（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選（ログインが必要）",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "result": "12/9以降",
+   "url": "https://lifetunes-mall.jp/shop/form/form.aspx?questionnaire=c3060_pokemoncard100_lot"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "CBトレコロ",
+   "item": "30th CELEBRATION（ポケカ）",
+   "game": "pokeca",
+   "method": "会員登録して応募",
+   "deadline": "2026-12-01",
+   "time": "23:59",
+   "url": "https://toreca-entry.com"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "エクストレカ",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "会員登録して応募",
+   "deadline": "2026-11-26",
+   "time": "23:59",
+   "url": "https://toreca-entry.com"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "るるなカード",
+   "item": "インフェルノX（ポケカ）",
+   "game": "pokeca",
+   "method": "SNS応募",
+   "deadline": "2026-11-22",
+   "time": "23:45",
+   "result": "11/23 8:00",
+   "url": "https://toreca-entry.com"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "オリくじ",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "会員登録して応募",
+   "deadline": "2026-12-04",
+   "time": "23:59",
+   "url": "https://toreca-entry.com"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "楽天ブックス",
+   "item": "神の支配・世界最強の戦士・ヒロインズエディション vol.2（ワンピース）",
+   "game": "onepiece",
+   "method": "会員で応募",
+   "deadline": "2026-11-18",
+   "time": "23:59",
+   "url": "https://books.rakuten.co.jp/rb/18669675/"
+  },
+  {
+   "pref": "全国・アプリ",
+   "shop": "ヤマダデンキ（ヤマダデジタル会員アプリ）",
+   "item": "神の支配・神の島の冒険・決戦の刻・世界最強の戦士（ワンピース）",
+   "game": "onepiece",
+   "method": "アプリで応募（会員）",
+   "deadline": "2026-11-18",
+   "time": "23:59",
+   "url": "https://www.yamada-denki.jp/service/pointservice/digital-kaiin.html"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "DMM通販",
+   "item": "蒼海の七傑・神の島の冒険・PRECIOUS BOX（ワンピース）",
+   "game": "onepiece",
+   "method": "会員で応募",
+   "deadline": "2026-11-24",
+   "time": "15:00",
+   "url": "https://www.dmm.com/mono/hobby/-/detail/=/cid=c260802009_lo2608_3/"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "CARD CREW 通販",
+   "item": "神の支配 OP-18（ワンピース）",
+   "game": "onepiece",
+   "method": "SNS応募",
+   "deadline": "2026-11-19",
+   "time": "23:59",
+   "url": "https://card-crew.com/products/lottery-5fff437dfbf24c89a7d5b41948412a12"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "ドラゴンスター通販",
+   "item": "神の支配 OP-18（ワンピース）",
+   "game": "onepiece",
+   "method": "会員・本人確認で応募",
+   "deadline": "2026-11-19",
+   "time": "23:59",
+   "url": "https://dorasuta.membercard.jp/lottery-entry?ekey=V2daQWQyaENjN3NLc1NUM0xhUm55QT09"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "トレカポート",
+   "item": "神の支配 OP-18（ワンピース）",
+   "game": "onepiece",
+   "method": "SNS応募",
+   "deadline": "2026-11-21",
+   "time": "10:00",
+   "url": "https://www.toreca-port.com/items/166133546"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "エクストレカ",
+   "item": "神の支配 OP-18（ワンピース）",
+   "game": "onepiece",
+   "method": "会員登録して応募",
+   "deadline": "2026-11-20",
+   "time": "18:00",
+   "url": "https://toreca-entry.com"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "プレミアムバンダイ",
+   "item": "神の支配 OP-18（ワンピース）",
+   "game": "onepiece",
+   "method": "アプリ・会員で応募",
+   "deadline": "2026-11-22",
+   "time": "23:00",
+   "url": "https://p-bandai.jp/item/item-1000261368/"
+  },
+  {
+   "pref": "全国・アプリ",
+   "shop": "しまむらパーク",
+   "item": "世界最強の戦士・受け継がれる意志（ワンピース）",
+   "game": "onepiece",
+   "method": "アプリで応募",
+   "deadline": "2026-11-22",
+   "time": "23:00",
+   "url": "https://www.shop-shimamura.com/item/0162100011161/?cl=211"
   }
  ]
 }
