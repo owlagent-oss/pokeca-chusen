@@ -9,4 +9,5 @@
 ## 抽選データの更新
 - 正本は買取ナビの `notes/lotteries.json`（見回りは1回で、両方のサイトに使う）
 - `python3 tools/sync.py <買取ナビの notes/lotteries.json>` で `site/index.html` に埋め込む → main に push
+- 抽選ナビだけに出す全国の抽選は `data/extra.json`（同じ店・同じ商品は買取ナビ側を優先）
 - 出どころ（src）は外に出さない。お店の告知で確かめたもの（verified）は「確認済み」、ほかは「要確認」と表示

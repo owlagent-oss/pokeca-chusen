@@ -8,7 +8,17 @@ src = sys.argv[1]
 d = json.load(open(src, encoding="utf-8"))
 keep = ["pref","shop","item","game","method","deadline","time","result","buy","condition","url","verified"]
 items = [{k: x[k] for k in keep if x.get(k)} for x in d["items"]]
-out = {"checked": d.get("checked",""), "items": items}
+# 抽選ナビだけに出す全国の抽選（data/extra.json）を足す。同じ店・同じ商品はかぶらせない
+ep = os.path.join(os.path.dirname(__file__), "..", "data", "extra.json")
+extra_checked = ""
+if os.path.exists(ep):
+    E = json.load(open(ep, encoding="utf-8"))
+    extra_checked = E.get("checked", "")
+    have = {(x["shop"], x["item"]) for x in items}
+    for x in E["items"]:
+        if (x["shop"], x["item"]) not in have:
+            items.append({k: x[k] for k in keep if x.get(k)})
+out = {"checked": max(d.get("checked",""), extra_checked), "items": items}
 p = os.path.join(os.path.dirname(__file__), "..", "site", "index.html")
 s = open(p, encoding="utf-8").read()
 js = "const DATA=" + json.dumps(out, ensure_ascii=False, separators=(",",":")).replace("</","<\\/") + ";"
