@@ -12,5 +12,13 @@
 - 正本は買取ナビの `notes/lotteries.json`（見回りは1回で、両方のサイトに使う）
 - `python3 tools/sync.py <買取ナビの notes/lotteries.json>` で `site/index.html` に埋め込む → main に push
 - 抽選ナビだけに出す抽選は `data/extra.json`（全国分＋東海でまとめサイトから拾った分。同じ店・同じ商品は買取ナビ側を優先）
-- 東海の拾い先：cardchusen.com/pokeka、nyuka-now.com/archives/2459、pokeca-navi.jp/prefectures/aichi/ ほか。拾ったら店の告知で確かめて verified を付ける
+- まとめサイト巡回（予定タスク「抽選ナビ まとめサイト巡回」1日3回 8:40・12:40・16:40）の見る先：
+  - cardchusen.com（/pokeka・/onepiece ほか。全トレカ・東海に強い）
+  - toreka-chusen.com（/category/pokeka/ ほか）
+  - pokeca-navi.jp（/prefectures/aichi/・gifu・mie と /lotteries/）
+  - chusen-media.vercel.app
+  - nyuka-now.com（抽選まとめ記事）
+  - toreca-entry.com
+- 東海（愛知・岐阜・三重）の抽選 → 買取ナビの notes/lotteries.json（正本）。全国は data/extra.json（オンライン抽選と全国チェーン一括のもの中心）
+- まとめサイトから拾ったものは「要確認」。お店の告知で確かめられたら verified を付ける
 - 出どころ（src）は外に出さない。お店の告知で確かめたもの（verified）は「確認済み」、ほかは「要確認」と表示
