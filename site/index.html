@@ -4,7 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ポケカ・トレカ抽選ナビ｜全国・名古屋・東海の抽選販売まとめ</title>
-<meta name="robots" content="noindex">
+<link rel="canonical" href="https://pokeca-chusen-navi.pages.dev/">
+<meta property="og:title" content="ポケカ・トレカ抽選ナビ｜全国・名古屋・東海の抽選販売まとめ">
+<meta property="og:description" content="ポケカの抽選販売・予約・再販情報を締切が近い順にまとめ。名古屋・愛知・岐阜・三重の店頭抽選もくわしく。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pokeca-chusen-navi.pages.dev/">
+<meta name="twitter:card" content="summary">
 <meta name="description" content="ポケカ（ポケモンカード）の抽選販売・予約・再販情報を締切が近い順にまとめています。全国のオンライン抽選に加え、名古屋・愛知・岐阜・三重の店頭抽選もくわしく掲載。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@500;800&display=swap" rel="stylesheet">
@@ -91,12 +96,12 @@ footer a{color:var(--sub);margin-right:12px}
 </style>
 </head>
 <body>
-<div class="proto">準備中・最終確認 <span id="checked"></span></div>
+<div class="proto">情報の最終確認 <span id="checked"></span></div>
 <header><div class="hd"><div class="logo">抽選</div><div class="ttl">ポケカ・トレカ抽選ナビ<small>全国・名古屋・東海の抽選販売まとめ</small></div></div></header>
 <div class="ticker"><span id="tick">⚡ 抽選情報を更新中 ⚡</span></div>
 <main>
   <div class="hero"><div class="big">定価で当てろ！</div><p>締切が近い順・名古屋＆東海はいちばん上に</p></div>
-  <div class="pr-note"><b>PR</b> 本サイトにはアフィリエイト広告（プロモーション）が含まれます。広告は「PR」と書いた枠にだけ表示し、抽選情報とは分けています。</div>
+  <div class="pr-note"><b>PR</b> 本サイトにはアフィリエイト広告（プロモーション）が含まれます。広告は「PR」と書いた枠にだけ表示し、抽選情報とは分けています。<a href="/ad-policy.html">広告について</a></div>
 
   <div class="sum">
     <button class="today" data-f="today"><span class="n" id="nToday">0</span><span class="l">今日締切</span></button>
@@ -115,7 +120,7 @@ footer a{color:var(--sub);margin-right:12px}
   <h2 id="listTitle">締切が近い順</h2>
   <div class="list" id="list"></div>
 
-  <section class="prsec" aria-label="広告">
+  <section class="prsec" id="prSec" aria-label="広告">
     <div class="hdr"><span>PR</span>オンラインオリパ（広告）</div>
     <p>ここは広告枠です。上の抽選情報とは関係ありません。18歳未満は利用できないサービスがあります。利用条件は各サイトでご確認ください。</p>
     <!-- 動画枠：A8で提携後、広告主の公式動画素材を入れる。data-video に動画ファイル、data-href にアフィリエイトのリンク -->
@@ -130,7 +135,7 @@ footer a{color:var(--sub);margin-right:12px}
 <footer>
   <div>掲載情報は各店の告知をもとにしています。応募条件・締切は必ず各店の告知ページでご確認ください。</div>
   <div style="margin-top:8px">運営：ポケカ・トレカ抽選ナビ編集部</div>
-  <div style="margin-top:8px"><a href="#">お問い合わせ</a><a href="#">プライバシーポリシー</a><a href="#">広告について</a></div>
+  <div style="margin-top:8px"><a href="/about.html">運営者情報・お問い合わせ</a><a href="/privacy.html">プライバシーポリシー</a><a href="/ad-policy.html">広告について</a></div>
 </footer>
 
 <script>
@@ -195,7 +200,7 @@ document.getElementById("checked").textContent=DATA.checked;
 render(); setInterval(render,60000);
 // PR動画：data-video と data-href が入ったら、音なし自動ループ再生＋タップでリンク先へ
 (function(){const a=document.getElementById("prVideo"),c=document.getElementById("prCta");const v=a.dataset.video,h=a.dataset.href;
-  if(!h){a.removeAttribute("href");c.style.display="none";return}
+  if(!h){document.getElementById("prSec").style.display="none";return}
   a.href=h;c.href=h;
   if(v){a.querySelector(".prvbox").outerHTML=`<video src="${v}" autoplay muted loop playsinline preload="metadata"></video>`}})();
 </script>
