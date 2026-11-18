@@ -3,7 +3,7 @@
 ポケカ（ポケモンカード）の抽選販売・予約・再販情報のまとめサイト。全国＋名古屋・東海を厚めに。
 
 - 公開：https://pokeca-chusen-navi.pages.dev （Cloudflare Pages のプロジェクト名 pokeca-chusen-navi。site/ の中身）
-- 公開のしくみ：Cloudflare Pages を GitHub（owlagent-oss/pokeca-chusen の main）に直接つなぐ（買取ナビと同じ）。ビルドコマンドなし・出力ディレクトリ site。main に push すると自動で反映。2026-11-18 につなぎ直し（それまでは手でアップロードした11/17夜の試作版のまま止まっていた）
+- 公開のしくみ：Cloudflare Pages を GitHub（owlagent-oss/pokeca-chusen の main）に直接つなぐ（買取ナビと同じ）。ビルドコマンドなし・出力ディレクトリ site。main に push すると自動で反映。2026-11-18 14:35 につなぎ直し（GitHub の Cloudflare Workers and Pages アプリに pokeca-chusen が許可されておらず、11/17夜の試作版のまま止まっていた。止まったら github.com/settings/installations → Cloudflare → Repository access を確認）
 - 2026-11-18 から検索に出す設定（noindex と robots.txt の Disallow を外した）。sitemap.xml あり
 - 必須ページ：about.html（運営者情報・お問い合わせ）、privacy.html、ad-policy.html（共通の見た目は pages.css）。お問い合わせのメールは about.html の CONTACT_MAIL に入れる
 - PR枠は、index.html の prVideo に data-href（アフィリエイトのリンク）を入れるまで丸ごと非表示
