@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>運営者情報・お問い合わせ｜ポケカ・トレカ抽選ナビ</title>
+<meta name="description" content="ポケカ・トレカ抽選ナビの運営者情報とお問い合わせ先です。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pages.css">
+</head>
+<body>
+<header><a class="hd" href="/"><div class="logo">抽選</div><div class="ttl">ポケカ・トレカ抽選ナビ</div></a></header>
+<main>
+<h1>運営者情報</h1>
+<div class="box">
+<table>
+<tr><th>サイト名</th><td>ポケカ・トレカ抽選ナビ</td></tr>
+<tr><th>URL</th><td>https://pokeca-chusen-navi.pages.dev/</td></tr>
+<tr><th>運営</th><td>ポケカ・トレカ抽選ナビ編集部</td></tr>
+<tr><th>内容</th><td>ポケモンカードを中心としたトレーディングカードの抽選販売・予約・再販情報のまとめ。全国のオンライン抽選と、名古屋・愛知・岐阜・三重の店頭抽選を掲載しています。</td></tr>
+<tr><th>お問い合わせ</th><td id="contact"></td></tr>
+</table>
+</div>
+
+<div class="box">
+<h2>情報の集め方</h2>
+<p>各お店・各社の公式サイトや公式SNSの告知をもとに掲載しています。お店の告知で確認できたものには「お店の告知で確認済み」と表示しています。</p>
+<p>抽選の条件・締切・発表日は変わることがあります。応募の前に、必ず各お店の告知ページでご確認ください。</p>
+</div>
+
+<div class="box">
+<h2>お問い合わせについて</h2>
+<p>掲載内容の誤り・削除のご依頼、お店の方からの掲載のご相談、広告に関するお問い合わせは、上のお問い合わせ先までご連絡ください。</p>
+<p>抽選の当選・落選や、各お店での購入についてのお問い合わせには対応できません。各お店に直接お問い合わせください。</p>
+</div>
+</main>
+<footer>
+<a href="/">トップ</a><a href="/about.html">運営者情報・お問い合わせ</a><a href="/privacy.html">プライバシーポリシー</a><a href="/ad-policy.html">広告について</a>
+<div style="margin-top:8px">© ポケカ・トレカ抽選ナビ編集部</div>
+</footer>
+<script>
+// お問い合わせ先：ここにメールアドレスを入れると表示される（空なら「準備中」）
+const CONTACT_MAIL="";
+document.getElementById("contact").innerHTML = CONTACT_MAIL
+  ? `<a href="mailto:${CONTACT_MAIL}">${CONTACT_MAIL}</a>`
+  : "メールでのお問い合わせ窓口を準備中です";
+</script>
+</body>
+</html>
