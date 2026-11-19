@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-18",
+ "checked": "2026-11-19",
  "note": "抽選ナビだけに出す抽選。全国分と、東海でまとめサイトから拾った分（要確認。お店の告知で確かめたら verified を付ける）。",
  "items": [
   {
@@ -611,6 +611,26 @@
    "deadline": "2026-11-26",
    "time": "23:45",
    "url": "https://toreca-entry.com"
+  },
+  {
+   "pref": "全国・オンライン",
+   "shop": "ポケパ365",
+   "item": "イーブイヒーローズ（ポケカ）",
+   "game": "pokeca",
+   "method": "オンライン（応募無料）",
+   "deadline": "2026-11-30",
+   "time": "23:59",
+   "url": "https://pokepa365.com/index/?code=ry2f84z7"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "トレカプロ",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "SNS応募（フォロー＆RP）",
+   "deadline": "2026-11-26",
+   "time": "23:59",
+   "url": "https://x.com/tcgprocojp/status/2119614977212666203"
   }
  ]
 }
