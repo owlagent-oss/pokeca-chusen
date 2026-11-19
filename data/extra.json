@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-19",
+ "checked": "2026-11-20",
  "note": "抽選ナビだけに出す抽選。全国分と、東海でまとめサイトから拾った分（要確認。お店の告知で確かめたら verified を付ける）。",
  "items": [
   {
@@ -631,6 +631,86 @@
    "deadline": "2026-11-26",
    "time": "23:59",
    "url": "https://x.com/tcgprocojp/status/2119614977212666203"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "ポケモンセンター各店",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "LINEミニアプリで抽選（購入時間帯の枠を選んで応募）",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "url": "https://shop.pokemon.co.jp/ja/shop/pokemoncenter-megatokyo/news/202611/000709.html"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "セブンネットショッピング",
+   "item": "30th CELEBRATION プレミアムデッキセット エーフィ・ブラッキー（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "url": "https://7net.omni7.jp/detail/2190054905.html"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "トレカプラザ55 通販",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選（Googleフォーム・会員登録が必要）",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "url": "https://docs.google.com/forms/d/e/1FAIpQLSeNdQItGyUMs7dhwBfG_MXHz3ytkmwhOmev9BPbJHIjDAjnBQ/viewform"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "福福トレカ 通販",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "url": "https://pokemon.fukufukutoreka.com/lottery/30"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "ToyShop POTATO KING 通販",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選",
+   "deadline": "2026-11-22",
+   "time": "23:45",
+   "url": "https://potatoking.base.shop/items/166327751"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "WIN-WINトレカ 通販",
+   "item": "ストームエメラルダ（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選",
+   "deadline": "2026-11-22",
+   "time": "23:45",
+   "url": "http://winwintcg.theshop.jp/items/166037093"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "るるなカード",
+   "item": "30th CELEBRATION 御三家カードセット（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選",
+   "deadline": "2026-11-22",
+   "time": "23:45",
+   "url": "https://card.luruna.jp/items/163993835"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "ガンギHOBBYSHOP",
+   "item": "ハイクラスパック VSTARユニバース（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選（会員限定）",
+   "deadline": "2026-11-25",
+   "time": "23:59",
+   "url": "https://www.gangi.co.jp/blog/drawsale-720"
   }
  ]
 }
