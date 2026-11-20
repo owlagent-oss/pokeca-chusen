@@ -741,6 +741,26 @@
    "deadline": "2026-11-20",
    "time": "20:00",
    "url": "https://cardchusen.com/onepiece"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "プレミアムバンダイ",
+   "item": "世界最強の戦士 OP-17（ワンピース）",
+   "game": "onepiece",
+   "method": "WEB抽選（当選者にオンライン販売）",
+   "deadline": "2026-11-22",
+   "time": "23:00",
+   "url": "https://p-bandai.jp/item/item-1000261368/"
+  },
+  {
+   "pref": "全国・アプリ",
+   "shop": "DMMマイカ",
+   "item": "スペシャルデッキセットMEGA メガオーダイル・メガカイリュー・メガゲンガー（ポケカ）",
+   "game": "pokeca",
+   "method": "アプリ抽選（会員）",
+   "deadline": "2026-11-20",
+   "time": "23:59",
+   "url": "https://cardchusen.com/calendar"
   }
  ]
 }
