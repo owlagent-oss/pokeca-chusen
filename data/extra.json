@@ -585,7 +585,7 @@
   {
    "pref": "全国・アプリ",
    "shop": "しまむらパーク",
-   "item": "世界最強の戦士・受け継がれる意志（ワンピース）",
+   "item": "世界最強の戦士・受け継がれる意志・ヒロインズエディション vol.2（ワンピース）",
    "game": "onepiece",
    "method": "アプリで応募",
    "deadline": "2026-11-22",
@@ -711,6 +711,36 @@
    "deadline": "2026-11-25",
    "time": "23:59",
    "url": "https://www.gangi.co.jp/blog/drawsale-720"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "トレカショップ スキップ 通販店",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "SNS応募",
+   "deadline": "2026-11-21",
+   "time": "12:00",
+   "url": "https://www.skip-tcg.com/view/news/20261118170202"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "ONE PIECE 麦わらストア 各店（名古屋店・梅田店など一部除外）",
+   "item": "受け継がれる意志（ワンピース）",
+   "game": "onepiece",
+   "method": "SNS抽選",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "url": "https://www.mugiwara-store.com/news/3131/"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "Joshin（ジョーシン）",
+   "item": "神の支配 OP-18（ワンピース）",
+   "game": "onepiece",
+   "method": "",
+   "deadline": "2026-11-20",
+   "time": "20:00",
+   "url": "https://cardchusen.com/onepiece"
   }
  ]
 }
