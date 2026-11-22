@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-20",
+ "checked": "2026-11-22",
  "note": "抽選ナビだけに出す抽選。全国分と、東海でまとめサイトから拾った分（要確認。お店の告知で確かめたら verified を付ける）。",
  "items": [
   {
@@ -761,6 +761,64 @@
    "deadline": "2026-11-20",
    "time": "23:59",
    "url": "https://cardchusen.com/calendar"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "Joshin（ジョーシン）",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "店頭で応募（Joshinアプリが必要）。受付は11/24から",
+   "deadline": "2026-11-26",
+   "time": "19:00",
+   "url": "https://x.com/pokecachan/status/2124038161471041979"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "ゲオ（GEO）",
+   "item": "ハドウシーカー・30th CELEBRATION カードセット（ポケカ）",
+   "game": "pokeca",
+   "method": "受付は11/30 11:00から",
+   "deadline": "2026-12-03",
+   "time": "17:59",
+   "url": "https://geo-online.co.jp/news/792"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "HMV 店舗",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "店頭のQRコードから応募",
+   "deadline": "2026-11-22",
+   "time": "20:59",
+   "url": "https://x.com/pokecachan/status/2123667979833630962"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "フルコンプ",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "LivePocketで応募",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "url": "https://livepocket.jp/e/xovyf"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "ゲームアーク・宝島",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "モバイル会員ページから応募",
+   "deadline": "2026-11-24",
+   "url": "https://x.com/pokecachan/status/2123667979833630962"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "ポケモンカードラウンジ",
+   "item": "ストームエメラルダ（ポケカ）",
+   "game": "pokeca",
+   "deadline": "2026-11-22",
+   "time": "23:59",
+   "url": "https://x.com/pokecachan/status/2123667979833630962"
   }
  ]
 }
