@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-22",
+ "checked": "2026-11-23",
  "note": "抽選ナビだけに出す抽選。全国分と、東海でまとめサイトから拾った分（要確認。お店の告知で確かめたら verified を付ける）。",
  "items": [
   {
@@ -819,6 +819,38 @@
    "deadline": "2026-11-22",
    "time": "23:59",
    "url": "https://x.com/pokecachan/status/2123667979833630962"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "DMM通販",
+   "item": "受け継がれる意志（ワンピース）",
+   "game": "onepiece",
+   "method": "会員で応募",
+   "deadline": "2026-11-24",
+   "time": "15:00",
+   "url": "https://www.dmm.com/mono/hobby/-/detail/=/cid=c260404065_lo2608_3/"
+  },
+  {
+   "pref": "全国・アプリ",
+   "shop": "DMMマイカ",
+   "item": "神の支配 OP-18（ワンピース）",
+   "game": "onepiece",
+   "method": "アプリで応募（会員）",
+   "deadline": "2026-11-26",
+   "time": "23:59",
+   "condition": "会員・レシート",
+   "url": "https://x.com/DMM_Myca/status/2123974682168717653"
+  },
+  {
+   "pref": "九州・アプリ",
+   "shop": "イオン九州（iAEONアプリ）",
+   "item": "スタートデッキ 砂漠の王女と海賊たち（ワンピース）",
+   "game": "onepiece",
+   "method": "iAEONアプリで応募",
+   "deadline": "2026-11-29",
+   "time": "23:59",
+   "condition": "アプリ・本人確認",
+   "url": "https://www.aeon-kyushu.info/customer/information/archives/149"
   }
  ]
 }
