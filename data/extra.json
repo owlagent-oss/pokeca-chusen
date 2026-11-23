@@ -851,6 +851,61 @@
    "time": "23:59",
    "condition": "アプリ・本人確認",
    "url": "https://www.aeon-kyushu.info/customer/information/archives/149"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "セブンネットショッピング",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "X（SNS）で応募",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "condition": "会員・本人確認",
+   "url": "https://x.com/7_netshopping/status/2123325414776975485"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "コロコロプレミア",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "X（SNS）で応募",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "condition": "本人確認",
+   "url": "https://x.com/LIFETUNES_MALL/status/2122525186222399801"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "CBトレコロ",
+   "item": "ストームエメラルダ（ポケカ）",
+   "game": "pokeca",
+   "method": "通販抽選",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "condition": "会員・レシート",
+   "url": "https://www.torecolo.jp/shop/t/t19294/"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "ToyShop POTATO KING",
+   "item": "30周年パック（ポケカ）",
+   "game": "pokeca",
+   "method": "通販抽選",
+   "deadline": "2026-11-23",
+   "time": "23:45",
+   "condition": "会員",
+   "url": "https://potatoking.base.shop/items/166328202"
+  },
+  {
+   "pref": "全国・オンライン",
+   "shop": "晴れる屋2（18店舗一括）",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "オンライン抽選",
+   "deadline": "2026-11-23",
+   "time": "23:59",
+   "condition": "会員・本人確認",
+   "url": "https://toreca-entry.com/"
   }
  ]
 }
