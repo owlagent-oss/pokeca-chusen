@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-24",
+ "checked": "2026-11-25",
  "note": "抽選ナビだけに出す抽選。全国分と、東海でまとめサイトから拾った分（要確認。お店の告知で確かめたら verified を付ける）。",
  "items": [
   {
@@ -928,6 +928,97 @@
    "time": "00:00",
    "condition": "",
    "url": "https://toreca-entry.com/"
+  },
+  {
+   "pref": "全国・アプリ",
+   "shop": "ヤマダデンキ（ヤマダデジタル会員アプリ）",
+   "item": "30th CELEBRATION カードセット 9種セット（ポケカ）",
+   "game": "pokeca",
+   "method": "アプリで応募（指定店舗）",
+   "deadline": "2026-11-25",
+   "time": "23:59",
+   "result": "12/9 12時頃",
+   "buy": "12/12〜12/18 店頭",
+   "condition": "1人1セット",
+   "url": "https://www.yamada-denki.jp/service/pointservice/digital-kaiin.html"
+  },
+  {
+   "pref": "全国・オンライン",
+   "shop": "ポケモンセンターオンライン",
+   "item": "カードイラストフィギュアコレクション 30th CELEBRATION（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選",
+   "deadline": "2026-11-30",
+   "time": "16:59",
+   "result": "12/4 15:00以降",
+   "buy": "12/8 16:59まで",
+   "condition": "",
+   "url": "https://www.pokemon-card.com/info/005764.html"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "イトーヨーカドー・アリオ（一部店舗）",
+   "item": "ニンジャスピナー・ムニキスゼロ（ポケカ）",
+   "game": "pokeca",
+   "method": "店頭のQRコードからLivePocketで応募。受付は11/27から",
+   "deadline": "2026-11-29",
+   "time": "",
+   "result": "",
+   "buy": "12/18〜12/20",
+   "condition": "",
+   "url": "https://nyuka-now.com/archives/2459"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "ホビーステーション",
+   "item": "ハドウシーカー（ポケカ）",
+   "game": "pokeca",
+   "method": "LivePocketで応募（1店舗のみ）",
+   "deadline": "2026-11-26",
+   "time": "23:59",
+   "result": "12/3予定",
+   "buy": "12/7〜12/13 店頭",
+   "condition": "LivePocket会員",
+   "url": "https://livepocket.jp/e/d275s"
+  },
+  {
+   "pref": "全国・店頭",
+   "shop": "トレカステーション 各店（一部店舗）",
+   "item": "30th CELEBRATION カードセット 9種セット（ポケカ）",
+   "game": "pokeca",
+   "method": "LivePocketで応募",
+   "deadline": "2026-11-29",
+   "time": "23:59",
+   "result": "12/1予定",
+   "buy": "12/4〜12/6 店頭",
+   "condition": "",
+   "url": "https://nyuka-now.com/archives/161846"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "トレカプラザ55 通販",
+   "item": "30th CELEBRATION カードセット・スターターセットex 3種（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選（Googleフォーム）",
+   "deadline": "2026-11-30",
+   "time": "23:59",
+   "result": "12/1〜12/2（当選者のみメール）",
+   "buy": "",
+   "condition": "",
+   "url": "https://docs.google.com/forms/d/e/1FAIpQLSfMYEQnQHZIXlZXRSR5pLb7glqN5fz9uBp-pVcEjKiMC4VfHg/viewform"
+  },
+  {
+   "pref": "全国・通販",
+   "shop": "福福トレカ 通販",
+   "item": "30周年パック（ポケカ）",
+   "game": "pokeca",
+   "method": "WEB抽選",
+   "deadline": "2026-11-29",
+   "time": "23:59",
+   "result": "",
+   "buy": "",
+   "condition": "会員・レシート",
+   "url": "https://pokemon.fukufukutoreka.com/lottery/31"
   }
  ]
 }
